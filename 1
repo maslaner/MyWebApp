@@ -1,0 +1,15 @@
+[Unit]
+Description=My .NET Core App
+
+[Service]
+WorkingDirectory=/data/MyWebApp
+ExecStart=/usr/bin/dotnet /data/MyWebApp/bin/Debug/net6.0/MyWebApp.dll
+Restart=always
+RestartSec=10
+SyslogIdentifier=myapp
+User=myuser
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
+
